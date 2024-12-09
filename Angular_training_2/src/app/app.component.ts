@@ -8,18 +8,22 @@ import { DatePipe, LowerCasePipe, UpperCasePipe, CurrencyPipe, PercentPipe } fro
 import { AppendPipe } from './pipes/append.pipe';
 import { DataService } from './services/data.service';
 import { User } from './interfaces/user';
+import { signal } from '@angular/core';
+import { TodoComponent } from './todo/todo.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, NgClass, NgStyle, NgIf, NgFor, DatePipe, LowerCasePipe, UpperCasePipe, CurrencyPipe, PercentPipe, AppendPipe, AsyncPipe, JsonPipe],
+  imports: [RouterOutlet, FormsModule, NgClass, NgStyle, NgIf, NgFor, DatePipe, LowerCasePipe, UpperCasePipe, CurrencyPipe, PercentPipe, AppendPipe, AsyncPipe, JsonPipe, TodoComponent],
   providers: [DataService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 export class AppComponent {
-  // ----------------- Async and Json pipe ------------------------------
+  // ----------------- Signal ------------------------------
+  count = signal<number>(0);
 
   // --------------------Dependency injection---------------------
   data: string[] = [];
@@ -30,6 +34,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
+    console.log("count", this.count());
     this.dataService.getUsers().subscribe({
       next: (response: User[]) => {
         this.users = response;
