@@ -1,0 +1,83 @@
+<!-- Hello, {{ title }}
+<br />
+<button [disabled]="isDisabled" type="text">{{ button }}</button>
+<button disabled="true">my btn</button>
+
+<img [src]="angularImage" width="100" height="100" alt="angular image" />
+
+<div [style.backgroundColor]="bgColor">
+  <h2 [style.color]="titleColor">Title</h2>
+  <p [style]="descriptionStyle">Description</p>
+</div>
+
+<h2 [class.textColor]="condition == '3'">Title</h2>
+
+<h3>Counter: {{ counter }}</h3>
+<button (click)="incrementCounter()">Increment counter</button>
+<br />
+<input type="text" placeholder="enter text" [(ngModel)]="inputText" />
+<p>you entered: {{ inputText }}</p>
+<input type="text" placeholder="enter text" [(ngModel)]="inputText" />
+
+<div [ngClass]="classes">
+  {{ message }}
+</div>
+
+<div class="color-box" [ngStyle]="{ 'background-color': selectedColor }">
+  100
+</div> -->
+
+<!-- ******************************************************************? -->
+
+<!-- <div *ngIf="isLoggedIn">Welcome, Krishna</div> -->
+
+<!-- <div *ngIf="isLoggedIn; else loggedOut">Welcome back, Krishna</div>
+<div>
+  <ng-template #loggedOut>Please Login</ng-template>
+</div>
+<button (click)="toggleLogin()">{{ buttonText }}</button> -->
+
+<!-- ************************************************************************* -->
+
+<!-- <ul>
+  <li *ngFor="let name of names; let i = index">{{ i }}->{{ name }}</li>
+</ul> -->
+
+<!-- ************************************************************************** -->
+------------Title----------------
+{{ title2 | lowercase }} <br />
+{{ title2 | uppercase }} <br /><br />
+----------------Dates------------
+{{ today | date }}<br />
+
+{{ today | date : "fullDate" }}<br />
+
+{{ today | date : "short" }}<br />
+
+{{ today | date : "medium" }}<br />
+
+{{ today | date : "long" }}<br />
+
+{{ today | date : "hh:mm:ss" }}<br />
+
+----------------Currency------------
+<p>{{ currency }}</p>
+<p>{{ currency | currency : "INR" : "symbol" : "1.1-4" }}</p>
+
+----------------Percent------------
+<p>{{ currency | percent }}</p>
+
+----------------Append-----------------
+<p>{{ title | append : " append" | uppercase }}</p>
+
+---------------- Dependency injection -----------------
+<div>{{ data }}</div>
+<h1>Users:</h1>
+<div *ngFor="let user of users">{{ user.userId }}. {{ user.name }}</div>
+
+----------------------Async and json pipe------------------------
+<div *ngIf="user | async; of: user">
+  <div>{{ user.name }}</div>
+</div>
+
+<div>{{ userData | json }}</div>

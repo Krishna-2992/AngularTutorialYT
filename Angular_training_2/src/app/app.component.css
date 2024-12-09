@@ -1,0 +1,15 @@
+.textColor {
+    color: red;
+}
+.danger {
+    background-color: lightblue;
+    color: red;
+}
+.text-font {
+    font-size: 40px;
+}
+.color-box {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+}
