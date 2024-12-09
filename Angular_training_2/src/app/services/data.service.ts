@@ -20,8 +20,4 @@ export class DataService {
     // http.get(apiUrl)
   }
 
-  getDemoUser(): Observable<any> {
-    return of({name: "Krishna", email: "krishnaagrawal2992@gmail.com"})
-  }
-
 }

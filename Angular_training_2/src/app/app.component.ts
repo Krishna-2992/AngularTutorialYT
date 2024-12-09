@@ -20,7 +20,6 @@ import { User } from './interfaces/user';
 
 export class AppComponent {
   // ----------------- Async and Json pipe ------------------------------
-  user = this.dataService.getDemoUser();
 
   // --------------------Dependency injection---------------------
   data: string[] = [];
@@ -40,6 +39,8 @@ export class AppComponent {
       }
     })
   }
+
+  userList = this.dataService.getUsers();
 
   title: string = '1. Angular';
   button: string = "My Button"

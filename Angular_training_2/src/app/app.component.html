@@ -76,8 +76,8 @@
 <div *ngFor="let user of users">{{ user.userId }}. {{ user.name }}</div>
 
 ----------------------Async and json pipe------------------------
-<div *ngIf="user | async; of: user">
-  <div>{{ user.name }}</div>
+<div *ngIf="userList | async as userList">
+  <div *ngFor="let u of userList">{{ u.name }}</div>
 </div>
 
 <div>{{ userData | json }}</div>
