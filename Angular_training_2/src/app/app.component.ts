@@ -10,12 +10,13 @@ import { DataService } from './services/data.service';
 import { User } from './interfaces/user';
 import { signal } from '@angular/core';
 import { TodoComponent } from './todo/todo.component';
+import { FormComponent } from './form/form.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, NgClass, NgStyle, NgIf, NgFor, DatePipe, LowerCasePipe, UpperCasePipe, CurrencyPipe, PercentPipe, AppendPipe, AsyncPipe, JsonPipe, TodoComponent],
+  imports: [RouterOutlet, FormsModule, NgClass, NgStyle, NgIf, NgFor, DatePipe, LowerCasePipe, UpperCasePipe, CurrencyPipe, PercentPipe, AppendPipe, AsyncPipe, JsonPipe, TodoComponent, FormComponent],
   providers: [DataService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

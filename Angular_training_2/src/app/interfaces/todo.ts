@@ -3,3 +3,7 @@ export interface Todo {
     title: string;
     done: boolean;
 }
+
+export interface Student {
+    languages: Array<string>
+}
