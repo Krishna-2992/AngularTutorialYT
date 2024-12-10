@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, effect } from '@angular/core';
 import { signal } from '@angular/core';
 import { Todo } from '../interfaces/todo';
 import { NgFor } from '@angular/common';
@@ -14,6 +14,17 @@ export class TodoComponent {
   count = signal<number>(0);
   todos = signal<Todo[]>([]);
   newTodoText = signal<string>("");
+
+  total = computed(() =>  this.todos().length)
+
+  constructor() {
+    effect(() => {
+      const items = this.total();
+      const even = items % 2 == 0; 
+      console.log(`Items are: ${even ? "Even" : "Odd"}`);
+      console.log(`total items: ${this.total()}`)
+    });
+  }
 
   ngOnInit() {
     console.log("count", this.count());
